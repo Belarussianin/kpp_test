@@ -1,13 +1,13 @@
 package com.example.restservice;
 
-public class Greeting {
+public class Random {
 
 	private final long id;
 	private final String content;
 	//private final int num;
 	//private final String side;
 
-	public Greeting(long id, String content) {
+	public Random(long id, String content) {
 		this.id = id;
 		this.content = content;
 		//this.num=number;
@@ -21,3 +21,6 @@ public class Greeting {
 		return content;
 	}
 }
+
+
+

@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class GreetingController {
+public class RandomController {
 
 	private static final String template = "Your number is: %s, number that is %s is %d";
 	private final AtomicLong counter = new AtomicLong();
 
 	@GetMapping("/task")
-	public Greeting greeting(@RequestParam(value = "number", defaultValue = "100") String number,
+	public Random random(@RequestParam(value = "number", defaultValue = "100") String number,
 							 @RequestParam(value = "side", defaultValue = ">") char side) {
 		int num = Integer.parseInt(number);
 		int number_to_output=10;
@@ -26,8 +26,7 @@ public class GreetingController {
 
 			number_to_output= (int) (Math.random()* (num + 1));
 		}
-		return new Greeting(counter.incrementAndGet(), String.format(template, number,side,number_to_output));
+		return new Random(counter.incrementAndGet(), String.format(template, number,side,number_to_output));
 	}
 }
-
 
